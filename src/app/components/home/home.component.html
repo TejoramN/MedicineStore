@@ -1,0 +1,22 @@
+<app-header></app-header>
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+  <li *ngFor="let item of items">
+    <a routerLink="/item/{{item.id}}">
+      <img [src]="item.imageUrl" [alt]="item.name">
+      <div class="name">
+        {{item.name}}
+      </div>
+      <div class="age">
+        <span>Above:  </span>{{item.age}}
+      </div>
+      <div class="price">
+        <span>
+          {{item.price | currency:'INR' }}
+        </span>
+
+      </div>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="container">
+  <img [src]="item.imageUrl" [alt]="item.name"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{item.name}}
+      </span>
+    </div>
+    <div class="age">
+      <span>
+        Above:  {{item.age}}
+      </span>
+    </div>
+    <div class="expiryDate">
+      <span>
+        Expiry Date:  {{item.expiryDate}}
+      </span>
+    </div>
+    <div class="description">
+      <span>
+        {{item.description}}
+      </span>
+
+    </div>
+    <div class="price">
+      <span>
+        {{item.price | currency : 'INR'}}
+      </span>
+
+    </div>
+
+
+    <button (click)="addToCart()">Add To Cart</button>
+
+  </div>
+
+</div>

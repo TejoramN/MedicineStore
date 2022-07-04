@@ -1,0 +1,23 @@
+<header>
+  <div class="container">
+    <a routerLink="/home" class="logo">ABC Medical</a>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/login"> Logout</a>
+        </li>
+        <li class="menu-container">
+          <a routerLink="/dashboard">Tejo</a>
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">Cart <span *ngIf="cartQuantity">{{cartQuantity}}</span></a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
