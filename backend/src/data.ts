@@ -1,6 +1,6 @@
 
 
-export const sample_items: any [] = [
+export const sample_items: any[] = [
   {
     id:'1',
     name:'Paracetamol',
@@ -106,3 +106,20 @@ export const sample_tags:any[] = [
   {name:'Multi Vitamin', count: 1}
 
 ]
+
+export const sample_users: any[] = [
+  {
+    name: "Tejoram",
+    email: "tejoram@gmail.com",
+    password:"123456",
+    address:"Nellore",
+    isAdmin: true,
+  },
+  {
+    name: "Vamsi",
+    email: "vamsi@gmail.com",
+    password:"123456",
+    address:"Kovur",
+    isAdmin: false,
+  }
+];

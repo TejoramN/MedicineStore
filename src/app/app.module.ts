@@ -5,8 +5,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/register/register.component';
-import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,7 +17,6 @@ import { TitleComponent } from './components/partials/title/title.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     LoginComponent,
     HomeComponent,
     HeaderComponent,
@@ -33,10 +30,10 @@ import { TitleComponent } from './components/partials/title/title.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
-    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -10,39 +11,36 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginAuth: AuthService, private router: Router) { }
+  loginForm!:FormGroup;
+  isSubmitted = false;
+  returnUrl = '';
+  constructor(private formBuilder:FormBuilder, private userService: UserService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  loginForm = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email]),
-    pwd: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)])
-
-  });
-
-  isUserValid: boolean = false;
-
-  loginSubmitted() {
-    this.loginAuth.loginUser([this.loginForm.value.email, this.loginForm.value.pwd])
-    .subscribe((res) => {
-      if(res == 'Failure'){
-        this.isUserValid = false;
-        alert('Login Unsuccessful');
-      }else{
-        this.isUserValid = true;
-        alert('Login Successfull');
-        this.router.navigateByUrl('home')
-
-      }
+    this.loginForm = this.formBuilder.group({
+      email:['',[Validators.required,Validators.email]],
+      password:['',Validators.required]
     });
+
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
   }
 
-  get Email(): FormControl{
-    return this.loginForm.get('email') as FormControl;
+  get fc(){
+    return this.loginForm.controls;
   }
-  get PWD(): FormControl {
-    return this.loginForm.get('pwd') as FormControl;
+
+  submit(){
+    this.isSubmitted = true;
+    if(this.loginForm.invalid) return;
+
+
+    this.userService.login({email:this.fc.email.value,
+    password: this.fc.password.value}).subscribe(()=>{
+      this.router.navigateByUrl(this.returnUrl);
+    });
+
   }
 
 }
