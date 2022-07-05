@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <td colspan="5">
+      <h3>Order Items:</h3>
+    </td>
+  </tr>
+  <tr *ngFor="let items of order.items">
+    <td>
+      <a routerLink="/item/{{items.item.id}}">
+        <img [src]="items.item.imageUrl">
+      </a>
+    </td>
+    <td>
+      {{items.item.name}}
+    </td>
+    <td>
+      {{items.item.price | currency : "INR"}}
+    </td>
+    <td>
+      {{items.quantity}}
+    </td>
+    <td>
+      {{items.price | currency :"INR"}}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <td>
+        <strong>Total : </strong>
+      </td>
+      <td>
+        <strong>
+          {{order.totalPrice | currency :"INR"}}
+        </strong>
+
+      </td>
+  </tr>
+</table>

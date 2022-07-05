@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { USER_LOGIN_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL} from '../shared/constants/urls';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
+
 import { User } from '../shared/models/User';
 
 
@@ -16,6 +17,10 @@ export class UserService {
 
   constructor(private http:HttpClient, ) {
     this.userObservable = this.userSubject.asObservable();
+   }
+
+   public get currentUser():User{
+    return this.userSubject.value;
    }
 
    login(userLogin:IUserLogin):Observable<User>{
@@ -34,6 +39,7 @@ export class UserService {
       })
     );
    }
+
 
    logout(){
     this.userSubject.next(new User());
