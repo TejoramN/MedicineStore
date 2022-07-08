@@ -20,6 +20,7 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
 import { MapComponent } from './components/partials/map/map.component';
+import { OrderTrackComponent } from './components/pages/order-track/order-track.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MapComponent } from './components/partials/map/map.component';
     DefaultButtonComponent,
     CheckoutPageComponent,
     OrderItemsListComponent,
-    MapComponent
+    MapComponent,
+    OrderTrackComponent
   ],
   imports: [
     BrowserModule,

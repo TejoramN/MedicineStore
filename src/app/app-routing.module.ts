@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { ItemPageComponent } from './components/pages/item-page/item-page.component';
+import { OrderTrackComponent } from './components/pages/order-track/order-track.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
 {path:'cart-page',component:CartPageComponent},
 {path:'login',component:LoginComponent},
 {path:'checkout',component:CheckoutPageComponent},
-{path:'home',component:HomeComponent}
+{path:'home',component:HomeComponent},
+{path:'track',component:OrderTrackComponent}
 
 ];
 

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="content">
+    <h1> OrderId #18ac096tr99bca55</h1>
+    <div class="details">
+      <div><strong>Date: </strong>Jul 21,2022</div>
+      <div><strong>Name: </strong>Tejoram</div>
+      <div><strong>Address: </strong>Nellore</div>
+      <div><strong>Status: </strong>Order Placed</div>
+
+    </div>
+    <order-items-list [order]="order"></order-items-list>
+
+  </div>
+  <div>
+    <app-title title="Shipping Address"></app-title>
+    <map [order]="order"></map>
+
+  </div>
+
+</div>
+<div class="buttons-container">
+  <div class="buttons">
+    <button (click)="goTOHome()">
+      Home
+    </button>
+
+  </div>
+
+</div>
