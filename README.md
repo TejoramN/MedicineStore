@@ -1,27 +1,109 @@
-# MedicineStore
+-----------------MEDICINE STORE-----------------------------
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+		FRONTEND(ANGULAR)
+	In this site the user will be able to purchase Medicine Online
 
-## Development server
+	There will be two types of login: 
+    	User
+    	Admin
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+USER:
+	User can see the list of products available on the site:
+  	Paracetamol
+  	Cetrizine
+  	Diazepam
+  	Ibuprofen
+  	Doxycycline
+  	Supardyn
 
-## Code scaffolding
+	When the user clicks on the product they will be redirected to the full details of the product
+  	Price
+  	Expiry Date
+  	Age required
+  	Description  of Product
+  	ADD TO CART
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+	When the user adds the product to cart they can see the list of other products in the cart
 
-## Build
+	There will be another button with place order
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+	In the Check Out page user has to enter there Details:
+  	Full Name
+  	Place
+  	Address on the map
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+	When the user clicks on the Place Order button they will Redirected to Order Tacking Page
 
-## Further help
+	In the Order Tracking page they can see the following Details:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   	Order Id
+   	Full Name
+  	Location
+  	Order Placed Date
+  	Total Items 
+  	Total Cost
+  	Order Status
+
+
+ADMIN:
+	When admin Login they can perform the following tasks:
+  	Create 
+  	Update 
+  	Edit and Delete
+  	Update Categories
+
+
+
+
+BACKEND(ASP.NET WEB API) :
+  SERVER (MS-SQL):
+
+	While Registering User has to enter following Details:
+    	Full Name
+    	E-Mail
+    	Address
+    	Password
+    	Confirm Password
+
+	The details entered will be connected to database and updated
+
+	Then User can Login with the details
+
+	When a new user is registered along with details there will be another column  MEMBER SINCE which will be updated automatically
+
+	Member Since is the column which helps the admin to see from when onwards the user is a customer.
+
+
+
+
+
+
+
+
+TESTING(N-UNIT/SELENIUM): 
+
+  	Testing is done using N-Unit and Selenium
+
+  	Website is tested on the following:
+
+      •	Opening Site
+      •	Setting to Full Screen
+      •	Login page
+      •	Home Page
+      •	Search
+      •	Opening an Item
+      •	Adding it to Cart
+      •	Removing an Item in Cart
+      •	Proceeding to Checkout
+      •	Filling Name and Address
+      •	Finding Location
+      •	Placing Order
+      •	Getting Order Status
+
+
+
+
+
