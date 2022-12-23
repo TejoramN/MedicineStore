@@ -4,8 +4,8 @@
 	In this site the user will be able to purchase Medicine Online
 
     	There will be two types of login: 
-           .  User
-           .	Admin
+           . User
+           . Admin
 
                    USER
     User can see the list of products available on the site
